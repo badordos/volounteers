@@ -1,0 +1,45 @@
+.statistics {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 38px;
+  margin-top: 10px;
+  margin-left: -2%;
+  margin-right: -2%;
+  justify-content: space-around;
+}
+
+.statistics__item {
+  display: flex;
+  align-items: center;
+  width: 46%;
+  min-width: 250px;
+  margin-bottom: 16px;
+  margin-left: 2%;
+  margin-right: 2%;
+
+  p {
+    margin-bottom: 0;
+
+    @include paragraph($weight: $medium, $color: $accent, $size: 1.25rem);
+  }
+
+  svg {
+    width: 42px;
+    height: 42px;
+    margin-right: 10px;
+
+    fill: $accent;
+  }
+}
+
+@media screen and (max-width: 1800px) {
+  .statistics__item {
+    min-width: 200px;
+    white-space: nowrap;
+
+    p {
+      font-size: 1.125rem;
+    }
+  }
+}

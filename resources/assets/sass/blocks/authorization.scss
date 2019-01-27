@@ -1,0 +1,112 @@
+.authorization {
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 24px 18px 20px;
+
+  background-color: $white;
+
+  border: 1px solid rgba($accent, .5);
+  border-radius: 15px;
+  box-shadow: 0 2px 3px 0 rgba($accent, .7);
+
+  display: flex;
+  flex-wrap: wrap;
+  width: 404px;
+
+  form {
+    display: block;
+    width: 100%;
+  }
+
+  h3 {
+    margin-left: 16px;
+    margin-bottom: 10px;
+
+    @include title;
+    font-size: 1.125rem;
+  }
+
+  input[type=text],
+  input[type=password],
+  input[type=email] {
+    width: 100%;
+    padding: 15px 24px;
+
+    @include paragraph($size: 1.125rem, $color: color('header', 'ach-note'), $weight: $medium);
+
+    border: 2px solid $accent;
+    border-radius: 30px;
+    outline: none;
+
+    &.error {
+      border-color: color('state', 'warning');
+
+      animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+
+    @include placeholder {
+      @include paragraph($size: 1rem, $color: color('placeholder', 'main'), $weight: $medium);
+    }
+  }
+
+  .label {
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  .btn {
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+
+    cursor: pointer;
+  }
+}
+
+.authorization__inner {
+  width: 100%;
+}
+
+.authorization__note {
+  display: block;
+  margin-top: 11px;
+  margin-bottom: 11px;
+
+  @include paragraph($size: 1rem, $color: $accent);
+  text-align: right;
+
+  a {
+    @include paragraph($size: 1rem, $color: $accent);
+
+    outline: none;
+    border-bottom: 1px solid $accent;
+
+    &:hover,
+    &:focus {
+      border-color: transparent;
+    }
+  }
+}
+
+.invalid-feedback {
+  width: 100%;
+  display: block;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  font-size: 1rem;
+  text-align: center;
+  color: color('state', 'warning');
+
+  a {
+    border-bottom: 2px solid color('state', 'warning');
+
+    &:hover,
+    &:focus {
+      border-bottom: 2px solid transparent;
+    }
+  }
+}

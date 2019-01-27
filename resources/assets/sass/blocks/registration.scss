@@ -1,0 +1,199 @@
+.registration {
+  margin-bottom: 160px;
+}
+
+.registration__inner {
+  overflow: hidden;
+
+  @include inner;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  //padding-left: 253px;
+}
+
+.registration__inner-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.registration__bot {
+  display: flex;
+  align-items: flex-start;
+  margin-right: 30px;
+}
+
+.registration__bot-image {
+  width: 430px;
+  height: 600px;
+  padding-top: 50px;
+
+  transition: transform 1s ease, opacity 1s ease;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.registration__bot-image--transform {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.registration__bot-dialog {
+  position: relative;
+
+  width: 476px;
+  margin-left: 15px;
+  padding: 50px 30px;
+
+  border-radius: 50px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+
+  @include word-break;
+
+  p {
+    @include title;
+    font-size: 1.75rem;
+  }
+}
+
+.registration__form {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 404px;
+
+  form {
+    display: block;
+    width: 100%;
+  }
+
+  h3 {
+    margin-left: 16px;
+    margin-bottom: 10px;
+
+    @include title;
+    font-size: 1.125rem;
+  }
+
+  input[type=text],
+  input[type=password] {
+    width: 100%;
+    padding: 15px 24px;
+
+    @include paragraph($size: 1.125rem, $color: color('header', 'ach-note'), $weight: $medium);
+
+    border: 2px solid $accent;
+    border-radius: 30px;
+    outline: none;
+
+    &.error {
+      border-color: color('state', 'warning');
+
+      animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+  }
+
+  .label {
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  .checkbox-container {
+    margin-left: 10px;
+
+    @include title;
+    font-size: 0.875rem;
+  }
+
+  .checkbox {
+    width: 22px;
+    height: 22px;
+
+    border-color: $accent;
+    border-radius: 6px;
+
+    &::after {
+      top: -2px;
+      left: 0;
+
+      width: 26px;
+      height: 11px;
+    }
+  }
+
+  .btn {
+    padding: 11px 34px;
+  }
+}
+
+.registration__thank {
+  display: flex;
+  width: 582px;
+  margin-top: 100px;
+  flex-direction: column;
+  align-items: center;
+
+  .btn {
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    width: 100%;
+  }
+}
+
+.registration__checkboxes {
+  .checkbox-container {
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+
+  a {
+    margin-left: 5px;
+    margin-right: 5px;
+
+    border-bottom: 1px solid $accent;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid transparent;
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .registration__bot-image {
+    width: 27vw;
+    max-width: 430px;
+    min-width: 346px;
+    height: auto;
+  }
+
+  .registration__bot-dialog {
+    width: 30vw;
+    max-width: 476px;
+    min-width: 368px;
+  }
+
+  .registration__form {
+    width: 26vw;
+    max-width: 404px;
+    min-width: 358px;
+
+    .btn {
+      min-width: 130px;
+    }
+
+    .checkbox-container {
+      white-space: nowrap;
+    }
+  }
+}

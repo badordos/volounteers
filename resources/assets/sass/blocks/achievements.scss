@@ -1,0 +1,54 @@
+.achievements {
+  width: 100%;
+  margin-bottom: 141px;
+
+  h1 {
+    margin-bottom: 84px;
+  }
+}
+
+.achievements__inner {
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  &::after {
+    content: '';
+
+    position: relative;
+
+    display: block;
+    height: 30px;
+    width: 100%;
+  }
+
+  &::-webkit-scrollbar {
+    width: 12px;
+
+    background-color: color('header', 'avatar');
+
+    border-radius: 9px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $accent;
+
+    border-radius: 9px;
+  }
+}
+
+.achievements__btn {
+  display: block;
+  margin: 0 auto;
+  padding: 16px 28px;
+
+  font-size: 1.25rem;
+}
+
+@media screen and (max-width: 1600px) {
+  .achievements {
+    margin-bottom: 92px;
+  }
+}

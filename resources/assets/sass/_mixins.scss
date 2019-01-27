@@ -1,0 +1,97 @@
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin inner {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: auto;
+  max-width: $site-width;
+  height: inherit;
+  margin: 0 auto;
+  padding: 0 $site-gutter;
+
+  @include tablet-lg {
+    width: auto;
+    max-width: $site-width;
+  }
+}
+
+@mixin title {
+  font-family: $font-family-accent;
+  font-weight: $bold;
+  font-style: italic;
+  color: $accent;
+}
+
+@mixin paragraph($size: $font-size-base, $weight: $regular, $color: $black, $font: $font-family-base, $height: 1.3) {
+  font-family: $font;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+  color: $color;
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder { @content; }
+  &:-moz-placeholder           { @content; }
+  &::-moz-placeholder          { @content; }
+  &:-ms-input-placeholder      { @content; }
+}
+
+@mixin word-break {
+  word-break: break-word;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  -ms-word-wrap: break-word;
+
+  @supports not (overflow-wrap: break-word) {
+    word-wrap: break-word;
+  }
+}
+
+@mixin screen-md() {
+  @media screen and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin tablet-lg() {
+  @media screen and (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin tablet-md() {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet-sm() {
+  @media (max-width: 601px) {
+    @content;
+  }
+}
+
+@mixin phone-lg() {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin phone-md() {
+  @media (max-width: 320px) {
+    @content;
+  }
+}

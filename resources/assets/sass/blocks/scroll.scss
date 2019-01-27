@@ -1,0 +1,45 @@
+.scroll {
+  padding-top: 23px;
+  padding-bottom: 23px;
+  padding-right: 4px;
+
+  border-radius: 37px;
+  border: 2px solid $accent;
+
+  textarea {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 30px;
+
+    border: none;
+
+    &::-webkit-scrollbar {
+      width: 12px;
+
+      background-color: color('header', 'avatar');
+
+      border-radius: 9px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $accent;
+
+      border-radius: 9px;
+    }
+  }
+
+  &.error {
+    border-color: color('state', 'warning');
+  }
+
+  &.animate-error {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  &.complete {
+    border: 2px solid #F8B133;
+  }
+}

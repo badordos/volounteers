@@ -1,0 +1,111 @@
+.create-campaign-card {
+  width: 50vw;
+  max-width: 960px;
+  min-width: 760px;
+  height: auto;
+  margin-bottom: 64px;
+
+  border-radius: 16px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.create-campaign-card__inner {
+  display: flex;
+  padding: 39px 33px 49px 34px;
+}
+
+.create-campaign-card__inner-column {
+  &:not(:last-child) {
+    margin-right: 35px;
+  }
+}
+
+.create-campaign-card__logo {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 31px;
+
+  img {
+    width: 18vw;
+    max-width: 340px;
+    min-width: 260px;
+    height: auto;
+  }
+}
+
+.create-campaign-card__photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20vw;
+  max-width: 376px;
+  min-width: 272px;
+  height: 24vw;
+  max-height: 460px;
+  min-height: 333px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  border: 2px dashed $accent;
+  border-radius: 29px;
+}
+.create-campaign-card__inner-title {
+  @include word-break;
+}
+
+.create-campaign-card__content {
+  @include paragraph($weight: $medium, $color: $main, $size: 1.25rem);
+  @include word-break;
+
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+.create-campaign-card__statistics {
+  margin-bottom: 0;
+
+  p {
+    margin-bottom: 0;
+
+    font-size: 1.25rem;
+  }
+
+  .statistics__item {
+    width: 100%;
+  }
+}
+
+.create-campaign-card__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+
+  .btn {
+    min-width: 210px;
+
+    text-align: center;
+
+    background-color: rgba($white, .5);
+
+    &:hover,
+    &:focus {
+      background-color: rgba($white, 1);
+    }
+  }
+}
+
+@media screen and (max-width: 1920px) {
+  .create-campaign-card__content {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .create-campaign-card__statistics p {
+    font-size: 1rem;
+  }
+}

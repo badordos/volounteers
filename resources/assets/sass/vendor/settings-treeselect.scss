@@ -1,0 +1,151 @@
+.list {
+  .vue-treeselect__multi-value {
+    //height: 170px;
+    max-height: 170px;
+
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    &::-webkit-scrollbar {
+      width: 12px;
+
+      background-color: color('header', 'avatar');
+
+      border-radius: 9px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $accent;
+
+      border-radius: 9px;
+    }
+  }
+
+  .vue-treeselect__multi-value-label {
+    &::before {
+      content: '-';
+      padding-right: 5px;
+    }
+  }
+
+  .vue-treeselect__multi-value-item {
+    @include title;
+    font-size: 1.5rem;
+    color: color('personal-page', 'text');
+
+    background: none;
+  }
+
+  .vue-treeselect__value-remove {
+    color: $accent;
+  }
+
+  .vue-treeselect__placeholder {
+    z-index: auto;
+
+    position: relative;
+
+    @include title;
+    font-size: 1.25rem;
+
+    opacity: .5;
+  }
+
+  .vue-treeselect__x-container,
+  .vue-treeselect__control-arrow-container {
+    opacity: 0;
+    z-index: -1;
+  }
+
+  .vue-treeselect__control {
+    border-color: transparent !important;
+
+    &:hover,
+    &:focus {
+      border-color: $accent !important;
+
+      .vue-treeselect__x-container,
+      .vue-treeselect__control-arrow-container {
+        opacity: 1;
+        z-index: 1;
+      }
+    }
+  }
+
+  .vue-treeselect__menu {
+    height: 140px !important;
+    overflow-x: auto;
+
+    border-color: $accent !important;
+    border-top-right-radius: 3px;
+
+    &::-webkit-scrollbar {
+      width: 12px;
+
+      background-color: color('header', 'avatar');
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $accent;
+      border-radius: 3px;
+    }
+  }
+  .vue-treeselect:not(.vue-treeselect--disabled):not(.vue-treeselect--focused) .vue-treeselect__control:hover {
+    border-color: $accent;
+  }
+
+  .vue-treeselect__control-arrow {
+    color: $accent;
+  }
+
+  .vue-treeselect svg {
+    fill: $accent;
+  }
+
+  .vue-treeselect__option--highlight {
+    background-color: rgba($accent, .5);
+  }
+
+  .vue-treeselect__checkbox--unchecked {
+    border-color: $accent;
+  }
+
+  .vue-treeselect__checkbox--checked {
+    border-color: $accent;
+    background-color: $accent;
+  }
+
+  .vue-treeselect__label {
+    @include title;
+    font-size: 1.5rem;
+    color: color('personal-page', 'text');
+  }
+
+  .vue-treeselect__label-container:hover {
+    .vue-treeselect__checkbox--checked {
+      border-color: $accent;
+      background-color: $accent;
+    }
+
+    .vue-treeselect__checkbox--unchecked {
+      border-color: $accent;
+    }
+  }
+
+  .vue-treeselect__menu-container {
+    //display: none !important;
+  }
+
+  .vue-treeselect--open {
+    .vue-treeselect__menu-container {
+      //display: block !important;
+    }
+
+    .vue-treeselect__menu {
+      //position: absolute !important;
+    }
+  }
+}

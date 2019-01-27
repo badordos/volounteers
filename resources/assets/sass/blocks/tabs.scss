@@ -1,0 +1,45 @@
+.tabs__inner {
+  @include inner;
+  flex-direction: column;
+}
+
+.tabs-list {
+  position: absolute;
+  top: -150px;
+  left: 180px;
+
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+
+  @include title;
+  font-size: 1.75rem;
+
+  li a{
+    display: block;
+    padding-bottom: 2px;
+
+    border-bottom: 4px solid transparent;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      border-bottom: 4px solid $accent;
+    }
+  }
+  li.active a{
+    border-bottom: 4px solid $accent;
+  }
+}
+
+.tabs__content {
+  width: 100%;
+
+  @include word-break;
+}
+
+@media screen and (max-width: 1300px) {
+  .tabs-list {
+    font-size: 1.25rem;
+  }
+}

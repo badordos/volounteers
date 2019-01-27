@@ -1,0 +1,266 @@
+@import "medium-editor";
+@import "medium-editor--theme";
+
+.editor {
+  //overflow: hidden;
+
+  width: 100%;
+  padding: 20px;
+  padding-left: 60px;
+  padding-bottom: 30px;
+  margin-bottom: 29px;
+  margin-left: auto;
+
+  border: 2px solid $accent;
+  border-radius: 24px;
+
+  &.error {
+    border-color: color('state', 'warning');
+  }
+
+  &.animate-error {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  h1 {
+    margin-top: 0;
+
+    @include title;
+    font-size: 2.375rem;
+  }
+
+  h2 {
+    margin-top: 0;
+
+    @include title;
+    font-size: 1.875rem;
+  }
+
+  h3 {
+    margin-top: 0;
+
+    @include title;
+    font-size: 1.5rem;
+  }
+
+  p {
+    margin: 0 0 8px;
+
+    @include paragraph($size: 1.25rem, $color: $main, $weight: $medium);
+  }
+
+  ul, ol {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+
+    li {
+      display: list-item;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #2F2FF1;
+
+    &:hover,
+    &:active {
+      text-decoration: none;
+    }
+  }
+
+  blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C" "\201D";
+  }
+  blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+  blockquote p {
+    display: inline;
+  }
+
+  .medium-insert-images {
+    img {
+      position: relative;
+
+      max-width: 668px;
+      width: 90%;
+      height: auto;
+    }
+  }
+
+  .icon-image,
+  .icon-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: block;
+    width: 20px;
+    height: 18px;
+
+    transform: translate(-50%, -50%);
+  }
+
+  .icon-image {
+    background: url('#{$path-img}icon-image.svg') no-repeat center;
+    background-size: 100% 100%;
+  }
+
+  .icon-video {
+    background: url('#{$path-img}icon-video.svg') no-repeat center;
+    background-size: 100% 100%;
+  }
+}
+
+.editor__inner {
+  height: auto;
+  min-height: 600px;
+  padding-right: 50px;
+  //overflow-y: auto;
+
+  @include word-break;
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $accent;
+
+    border-radius: 9px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 18px;
+
+    background-color: color('header', 'avatar');
+
+    border-radius: 9px;
+  }
+}
+
+.editor__inner-form {
+  display: flex;
+  width: 100%;
+}
+
+.editor__error {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  display: block;
+
+  @include title;
+  white-space: nowrap;
+  color: color('state', 'warning');
+
+  opacity: 0;
+  transform: translateY(100%) scale(0);
+
+  transition: opacity .3s, transform .3s;
+
+  &.active {
+    opacity: 1;
+    transform: translateY(100%) scale(1);
+  }
+}
+
+.medium-editor-toolbar-actions li,
+.medium-editor-toolbar-actions button {
+  border-radius: 50%;
+}
+
+.medium-editor-toolbar li button {
+  color: $white;
+
+  &:hover {
+    color: $accent;
+    background-color: $white;
+  }
+}
+
+.medium-editor-toolbar li .medium-editor-button-active {
+  color: $accent;
+}
+
+.medium-editor-insert-plugin .medium-insert-buttons .medium-insert-buttons-show span {
+  margin-top: 0;
+}
+
+.medium-insert-images-toolbar {
+  display: none !important;
+}
+
+.medium-insert-embeds-toolbar {
+  display: none !important;
+}
+
+.medium-editor-insert-plugin .medium-insert-buttons button {
+  position: relative;
+}
+
+.medium-editor-insert-plugin .medium-insert-buttons button {
+  color: $accent;
+
+  border: 1px solid $accent;
+}
+
+.medium-editor-action {
+  position: relative;
+
+  .icon-remove {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: block;
+    width: 20px;
+    height: 18px;
+
+    background: url('#{$path-img}icon-cancel.svg') no-repeat center;
+    background-size: 100% 100%;
+
+    transform: translate(-50%, -50%);
+  }
+}
+
+.medium-insert-embed {
+  & > div {
+    max-width: 100% !important;
+  }
+}
+
+.loading {
+  width: 100%;
+  margin-right: 75px;
+  margin-bottom: 10px;
+
+  @include title;
+  text-align: right;
+
+  &::after {
+    content: "";
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    animation: ellipsis-dot 1s infinite .3s;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+    width: 1em;
+  }
+}
+
+.medium-insert-buttons {
+  height: 30px;
+}

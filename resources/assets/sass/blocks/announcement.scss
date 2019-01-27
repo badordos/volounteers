@@ -1,0 +1,36 @@
+.announcement {
+  display: flex;
+  flex-wrap: wrap;
+  width: 35%;
+  margin-top: 250px;
+
+  h1 {
+    margin-bottom: 50px;
+  }
+  h3 {
+    @include title;
+  }
+
+  p {
+    @include paragraph($size: 1.125rem, $weight: $medium, $color: $main);
+  }
+
+  .btn--bold {
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+}
+
+
+.announcement__date {
+  display: block;
+
+  @include title;
+  font-size: 1.5rem;
+  text-align: right;
+}
+
+.announcement__item:not(:last-of-type) {
+  margin-bottom: 50px;
+}

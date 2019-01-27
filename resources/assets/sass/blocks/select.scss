@@ -1,0 +1,253 @@
+.select {
+  * {
+    &::-webkit-scrollbar {
+      width: 12px;
+
+      background-color: color('header', 'avatar');
+
+      border-radius: 9px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $accent;
+
+      border-radius: 9px;
+    }
+  }
+
+  .v-select {
+    &::after {
+      z-index: 1;
+
+      content: '';
+
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      display: block;
+      width: 100%;
+      height: 50px;
+
+      background-color: $white;
+
+      border: 1px solid rgba(0,0,0,.26);
+      border-top-right-radius: 20px;
+      border-top-left-radius: 20px;
+      border-bottom: none;
+
+      box-shadow: 0 -2px 10px -1px rgba(102, 36, 132, 0.54);
+      opacity: 0;
+
+      transform: translateY(5px);
+      transition: opacity .3s;
+    }
+
+    &::before {
+      z-index: 2;
+
+      content: '';
+
+      position: absolute;
+      left: 0;
+      bottom: -11px;
+
+      display: block;
+      width: 100%;
+      height: 10px;
+
+      background-color: $white;
+
+      border-left: 1px solid rgba(0,0,0,.26);
+      border-right: 1px solid rgba(0,0,0,.26);
+      opacity: 0;
+
+      transition: opacity .3s;
+    }
+
+    &.open {
+      &::after {
+        opacity: 1;
+      }
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  .dropdown-toggle {
+    background-color: $white !important;
+  }
+
+  .open {
+    .dropdown-menu {
+      z-index: 12 !important;
+    }
+
+    .dropdown-toggle {
+      z-index: 13 !important;
+    }
+  }
+
+  .open-indicator {
+    margin-right: 20px;
+
+    &::before {
+      border: 8px solid transparent !important;
+      border-top: 8px solid $accent !important;
+      border-right: 8px solid $accent !important;
+
+      transform-origin: 10px 6px;
+    }
+  }
+
+  .selected-tag {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    padding-left: 26px !important;
+
+    @include paragraph($size: 1.25rem, $weight: $medium, $color: $main);
+    font-style: normal !important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    transform: translateY(-50%);
+  }
+  .dropdown-toggle {
+    z-index: 11;
+
+    position: relative;
+
+    width: 100%;
+    padding: 0 !important;
+
+    border: 2px solid $accent !important;
+    border-radius: 37px !important;
+
+    &.error {
+      border-color: color('state', 'warning') !important;
+    }
+
+    &.animate-error {
+      animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+  }
+
+  .dropdown-menu {
+    z-index: 10 !important;
+
+    width: 100% !important;
+
+    @include paragraph($weight: $medium, $color: $accent, $size: 1.375rem);
+    font-style: normal;
+
+    background-color: $white !important;
+    border-radius: 20px !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    box-shadow: 0 3px 5px 0 rgba(102, 36, 132, 0.54) !important;
+
+    li a{
+      padding-left: 34px !important;
+      padding-right: 34px !important;
+      padding-top: 9px !important;
+      padding-bottom: 9px !important;
+
+      color: $accent !important;
+      white-space: normal !important;
+    }
+
+    .active a {
+      background-color: $white !important;
+    }
+
+    .highlight a {
+      color: $white !important;
+
+      background-color: rgba($accent, .5) !important;
+    }
+  }
+
+  input[type=search] {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 22px 26px !important;;
+
+    @include paragraph($size: 1.25rem, $weight: $medium, $color: $main);
+
+    cursor: pointer;
+    border: none !important;;
+    border-radius: 37px;
+    outline: none !important;;
+    box-shadow: none !important;;
+  }
+
+  .searching {
+    .selected-tag {
+      opacity: 0 !important;
+    }
+  }
+
+  .clear {
+    display: none;
+  }
+
+  .v-select.disabled .dropdown-toggle, .v-select.disabled .dropdown-toggle .clear, .v-select.disabled .dropdown-toggle input, .v-select.disabled .open-indicator, .v-select.disabled .selected-tag .close {
+    border-radius: 37px !important;
+  }
+
+  .disabled {
+    .open-indicator,
+    .open-indicator::before {
+      display: none;
+
+      pointer-events: none;
+      transition: none !important;
+    }
+
+    .v-select .open-indicator, .v-select .open-indicator:before {
+      transition: all 0s !important;
+    }
+
+    .dropdown-toggle {
+      pointer-events: none;
+      background-color: #f8f8f8 !important;
+    }
+
+    input[type=search] {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .selected-tag {
+      opacity: 0;
+    }
+  }
+}
+
+.v-select {
+  &.disabled {
+    .clear {
+      display: none;
+    }
+
+    .dropdown-toggle {
+      pointer-events: none;
+    }
+
+    .selected-tag {
+      opacity: 0;
+    }
+  }
+}

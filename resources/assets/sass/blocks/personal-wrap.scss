@@ -1,0 +1,37 @@
+.personal-wrap {
+  z-index: 29;
+
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 15px 0;
+
+  background-color: rgba(0, 0, 0, 0.65);
+
+  transition: all 0.5s ease-in-out;
+
+  p {
+    @include title;
+    font-size: 1.25rem;
+    color: $white;
+  }
+
+  .btn {
+    margin-left: 20px;
+    border-color: $accent;
+
+    &:hover,
+    &:focus {
+      border-color: $white;
+    }
+  }
+}
+
+.personal-wrap__inner {
+  @include inner;
+
+  flex-wrap: nowrap;
+  align-items: center;
+}

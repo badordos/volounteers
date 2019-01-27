@@ -1,0 +1,78 @@
+.single-campaign {
+  width: 100%;
+  margin-bottom: 80px;
+
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  box-shadow: 0 20px 18px 0 rgba(102, 36, 132, 0.15);
+
+  p {
+    font-size: 1.25rem;
+    font-weight: $medium;
+
+    margin-bottom: 25px;
+  }
+
+  .achievements-list {
+    z-index: 3;
+  }
+}
+
+.single-campaign__inner {
+  @include inner;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  padding-left: 2%;
+  padding-right: 3%;
+  padding-bottom: 90px;
+
+  .auth-user {
+    position: static;
+
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .auth-user__avatar {
+    align-self: inherit;
+    margin: 0;
+  }
+}
+
+.single-campaign__column {
+  display: flex;
+  flex-wrap: wrap;
+
+  .btn--bold {
+    padding: 17px 53px;
+    margin: 0 auto;
+
+    font-size: 1.5rem;
+  }
+}
+
+.single-campaign__title,
+.single-campaign__description {
+  width: 100%;
+
+  @include word-break;
+}
+
+.single-campaign__description {
+  text-align: justify;
+}
+
+@media screen and (max-width: 1600px) {
+  .single-campaign__column {
+    .btn {
+      padding: 12px 40px;
+
+      font-size: 1.125rem;
+    }
+  }
+}

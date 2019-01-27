@@ -1,0 +1,127 @@
+.campaigns-slider {
+  width: 100%;
+  display: flex;
+}
+
+.campaigns-slider__left {
+  width: 25%;
+  min-width: 300px;
+  margin-right: 20px;
+  padding-top: 47px;
+
+  .swiper-button-disabled {
+    opacity: .5;
+
+
+    &:focus,
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+
+  .btn--bold {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .slider-buttons {
+    margin-bottom: 106px;
+  }
+}
+
+.campaigns-slider__right {
+  position: relative;
+  top: -159px;
+  flex-grow: 1;
+
+  width: 100%;
+  overflow: hidden;
+
+  .swiper-container {
+    padding-top: 60px;
+    padding-left: 10px;
+    //padding-bottom: 159px;
+    padding-right: 10px;
+  }
+  .swiper-scrollbar {
+    //position: relative;
+    left: 15%;
+    bottom: 0;
+
+    width: 80%;
+    height: 15px;
+    background-color: color('scrollbar', 'main');
+  }
+
+  .swiper-scrollbar-drag {
+    background-color: $accent;
+    
+    &:focus,
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .campaign-card {
+    &::before {
+      position: absolute;
+      content: '';
+      bottom: -81px;
+      left: 0;
+
+      display: block;
+      width: 100%;
+      height: 35px;
+
+      background-color: $accent;
+      border-radius: 50%;
+
+      transform: scale(.8);
+      opacity: .1;
+      filter: blur(5px);
+
+      transition: opacity .3s, transform .3s;
+    }
+  }
+
+  .swiper-slide-active {
+    .campaign-card {
+      &::before {
+        opacity: .3;
+      }
+    }
+  }
+
+  .swiper-slide-next {
+    .campaign-card {
+      &::before {
+        opacity: .2;
+      }
+    }
+  }
+
+  .swiper-slide:last-child {
+    .campaign-card__verification {
+      .verified,
+      .not-verified {
+        left: auto;
+        right: -8px;
+
+        &::after {
+          left: auto;
+          right: 18px;
+        }
+      }
+    }
+  }
+
+  .swiper-wrapper {
+    padding-bottom: 159px;
+  }
+
+  .swiper-slide {
+    width: auto;
+  }
+}
+

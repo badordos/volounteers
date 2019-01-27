@@ -1,0 +1,50 @@
+.vote__inner {
+  @include inner;
+  flex-direction: column;
+  padding-left: 8%;
+  padding-right: 0;
+}
+
+.vote {
+  margin-bottom: 112px;
+
+  .swiper-scrollbar {
+    //position: relative;
+    overflow: hidden;
+
+    bottom: 0;
+
+    width: 80%;
+    margin-left: 10%;
+    height: 15px;
+    background-color: color('scrollbar', 'main');
+  }
+
+  .swiper-scrollbar-drag {
+    background-color: $accent;
+
+    &:focus,
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  h1 {
+    margin-bottom: 46px;
+  }
+}
+
+.vote__slider {
+  width: 80%;
+  margin: 0;
+  margin-left: auto;
+  padding: 10px;
+
+  .swiper-slide {
+    width: auto;
+  }
+
+  .swiper-wrapper {
+    padding-bottom: 66px;
+  }
+}

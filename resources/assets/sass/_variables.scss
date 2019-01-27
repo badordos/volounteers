@@ -1,0 +1,104 @@
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+
+//== Paths
+
+// Images
+$path-img: '/images/';
+
+//== Fonts
+
+// Family
+$font-family-base: 'Roboto', Arial, sans-serif;
+$font-family-accent: 'Muller', Arial, sans-serif;
+
+// Size
+$font-size-base: 1.25rem;
+
+// Line-height
+$font-line-height-base: 1.3;
+
+// Weight
+$thin: 100;
+$extralight: 200;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+$extra-bold: 800;
+$black-weight: 900;
+
+
+//== Site sizes
+$site-width: 1920px;
+$site-gutter: 50px;
+$main-padding-left: 5vw;
+
+//== Colors
+
+$white: #ffffff;
+$black: #000000;
+
+$main: #515151;
+$accent: #662484;
+
+
+//== Palette
+
+$palette: (
+        'state': (
+                'warning': #ff0101,
+        ),
+        'header': (
+                'avatar': #d8d8d8,
+                'challenges': #f8f5f5,
+                'ach-note': #999999,
+        ),
+        'placeholder': (
+                'main': #b6b6b6,
+        ),
+        'list': (
+                'main': #252b2e,
+        ),
+        'scrollbar': (
+                'main': #d4d3d3,
+        ),
+        'footer': (
+                'main': #f3f2f2,
+        ),
+        'buttons': (
+                'checkbox': #979797,
+        ),
+        'filter': (
+                'disabled': #858585,
+        ),
+        'accordion': (
+                'border': #c176e3,
+        ),
+        'personal-page': (
+                'text': #7a7a7a,
+        ),
+        'achievement': (
+                'note': #b3b3b3,
+        )
+);
+
+@function color(
+  $name,
+  $variant
+) {
+  $color: null;
+
+  // Get the color spectrum
+  $color-spectrum: map-get($palette, $name);
+
+  // Get the color variant
+  @if $color-spectrum {
+    $color: map-get($color-spectrum, $variant);
+  }
+
+  @return $color;
+}

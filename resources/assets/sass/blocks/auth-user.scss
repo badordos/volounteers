@@ -1,0 +1,387 @@
+.auth-user {
+  position: relative;
+  top: -28px;
+
+  display: flex;
+  width: 32%;
+  margin-left: 6%;
+  padding-bottom: 40px;
+  justify-content: space-between;
+  align-items: center;
+
+  .auth-user__location {
+    margin-bottom: 0;
+  }
+}
+
+.auth-user__link {
+  outline: none;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
+
+.auth-user__challenges {
+  position: relative;
+
+  min-width: 269px;
+
+  h4 {
+    z-index: 5;
+
+    position: relative;
+
+    margin: 0;
+    padding: 53px 20px 44px 65px;
+
+    @include paragraph($color: $accent, $weight: $medium, $size: 1.125rem);
+    text-align: center;
+
+    background-color: color('header', 'challenges');
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 24px;
+
+      display: block;
+      width: 27px;
+      height: 70px;
+      margin-top: 5px;
+
+      background: url('#{$path-img}achievement.svg') no-repeat center;
+      background-size: 100% 100%;
+
+      transform: translateY(-50%);
+    }
+  }
+}
+.auth-user__avatar {
+  position: relative;
+
+  display: flex;
+  margin-left: 20px;
+
+  align-items: center;
+  align-self: center;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+
+    display: block;
+    width: 100%;
+    height: 50px;
+  }
+  &:hover {
+    .auth-user__avatar-link {
+      display: block;
+
+      opacity: 1;
+    }
+  }
+}
+.auth-user__avatar-photo {
+  width: 80px;
+  height: 80px;
+  margin-right: 13px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 15px;
+  background-color: color('header', 'avatar');
+}
+
+.auth-user__avatar-nickname {
+  @include paragraph($color: $accent, $weight: $medium, $size: 1.125rem);
+}
+
+.achievements-list {
+  z-index: 5;
+
+  position: absolute;
+  bottom: 26px;
+  left: 58px;
+
+  display: flex;
+
+  transform: translateY(100%);
+
+  li {
+    position: relative;
+
+    width: 18px;
+    height: 34px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
+
+    &:first-child {
+      width: 29px;
+      height: 47px;
+      margin-right: 14px;
+
+      .achievements-list__note {
+        left: -6px;
+      }
+    }
+
+    &:hover {
+      .achievements-list__note {
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.achievements-list__note {
+  position: absolute;
+  top: -55px;
+  left: -12px;
+
+  display: none;
+  min-width: 120px;
+  padding: 10px 12px;
+
+  @include paragraph($size: 0.875rem, $weight: $medium, $color: color('header', 'ach-note'));
+  white-space: nowrap;
+
+  background-color: $white;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px 1px rgba($main, .7);
+
+  &::after {
+    z-index: -1;
+
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 12px;
+
+    display: block;
+    width: 18px;
+    height: 18px;
+
+    transform: rotate(45deg);
+
+    background-color: $white;
+    box-shadow: 0 2px 5px 1px rgba($main, .7);
+    border-radius: 3px;
+  }
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    bottom: -4px;
+    left: 13px;
+
+    display: block;
+    width: 15px;
+    height:15px;
+
+    background-color: $white;
+
+    transform: rotate(45deg);
+  }
+}
+
+.achievements-list {
+  li {
+    .achievements-list__note {
+      left: auto;
+      right: -12px;
+
+      &::before {
+        left: auto;
+        right: 13px;
+      }
+
+      &::after {
+        left: auto;
+        right: 12px;
+      }
+    }
+
+    &:first-child {
+      .achievements-list__note {
+        left: auto;
+        right: -6px;
+      }
+    }
+  }
+}
+
+.auth-user__challenges-show {
+  z-index: 4;
+
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+
+  width: 99%;
+
+  transform: translate(-50%, 100%);
+
+  ul, ol {
+    width: 100%;
+    padding: 38px 16px 41px 18px;
+
+    background-color: color('header', 'challenges');
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+
+    counter-reset: num;
+
+    li {
+      position: relative;
+
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      @include paragraph($color: $accent, $weight: $medium, $size: 1.125rem);
+      text-align: center;
+
+      &::before {
+        margin-right: 2px;
+
+        content: counter(num) ') ';
+        counter-increment: num;
+        @include paragraph($color: $accent, $weight: $medium, $size: 1.125rem);
+      }
+
+
+      &:not(:last-child) {
+        margin-bottom: 26px;
+      }
+    }
+  }
+
+  a {
+    border-bottom: 2px solid $accent;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      border-bottom: 2px solid transparent;
+    }
+  }
+}
+
+.auth-user__avatar-link {
+  z-index: 3;
+
+  position: absolute;
+  left: 50%;
+  bottom: -30px;
+
+  display: none;
+  padding: 11px 20px;
+
+  font-size: 1.125rem;
+  white-space: nowrap;
+
+  transform: translate(-50%, 99%);
+}
+
+.auth-user__location {
+  display: flex;
+  align-items: center;
+
+  @include paragraph($size: 1.5rem, $weight: $bold, $color: $accent);
+
+  svg {
+    width: 18px;
+    height: 31px;
+    margin-right: 7px;
+  }
+}
+
+@media screen and (max-width: 1920px) {
+  .achievements-list {
+    li:last-child {
+      .achievements-list__note {
+        left: auto;
+        right: -12px;
+
+        &::before {
+          left: auto;
+          right: 13px;
+        }
+
+        &::after {
+          left: auto;
+          right: 12px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .auth-user__challenges {
+    max-width: 269px;
+    min-width: 196px;
+  }
+
+  .auth-user__challenges {
+    h4 {
+      padding: 85px 10px 14px 10px;
+
+      &::before {
+        top: 35px;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  .achievements-list {
+    li {
+      .achievements-list__note {
+        left: auto;
+        right: -12px;
+
+        &::before {
+          left: auto;
+          right: 13px;
+        }
+
+        &::after {
+          left: auto;
+          right: 12px;
+        }
+      }
+
+      &:first-child {
+        .achievements-list__note {
+          left: auto;
+          right: -6px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+
+}

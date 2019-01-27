@@ -1,0 +1,130 @@
+.main-directions {
+  position: relative;
+  top: -123px;
+  left: 10%;
+
+  width: 648px;
+
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.main-directions__image {
+  width: 100%;
+  height: 38vw;
+  max-height: 716px;
+  min-height: 702px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.main-directions__content {
+  position: absolute;
+
+  width: 100%;
+
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 1px 3px 10px 4px rgba(0, 0, 0, .2);
+  //background-color: rgba(255, 254, 254, .84);
+}
+
+.main-directions__text {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  padding: 0 33px;
+  padding-top: 100px;
+  //background: url("/images/bg-directions.png") no-repeat center;
+  background: linear-gradient(181deg, rgba(0, 0, 0, 0), rgba(255, 254, 254, 0.34) 23%, rgba(255, 254, 254, 0.9) 50%, rgba(255, 254, 254, .99) 65%, rgb(255, 254, 254));
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  h3 {
+    margin-bottom: 8px;
+
+    @include title;
+    font-size: 1.75rem;
+  }
+
+  p {
+    margin-bottom: 0;
+
+    @include paragraph($size: 1.5rem, $color: $main, $weight: $medium);
+  }
+
+  .btn {
+    align-self: flex-end;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-bottom: 34px;
+
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+      box-shadow: inset 0 4px 2px rgba($main, .5);
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+  }
+}
+
+.main-directions__list {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+
+  a {
+    display: inline-block;
+    @include title;
+    font-size: 1.5rem;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      border-bottom: 5px solid $accent;
+    }
+  }
+
+  li.active {
+    a {
+      border-bottom: 5px solid $accent;
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .main-directions {
+    width: 44%;
+    max-width: 648px;
+    min-width: 514px;
+  }
+
+  .main-directions__image {
+    height: 44vw;
+    max-height: 702px;
+    min-height: 551px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .main-directions {
+    width: 514px;
+  }
+
+  .main-directions__image {
+    height: 551px;
+  }
+}

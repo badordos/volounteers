@@ -1,0 +1,106 @@
+.preloader {
+  display: none;
+  position: relative;
+
+  &.active {
+    z-index: 30;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $accent;
+  }
+}
+
+.circle{
+  width: 20px;
+  height: 20px;
+  animation-name: bounce_circle;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  border-radius: 20px;
+  //background-color: rgb(255,255,255);
+  background-color: $white;
+  &:not(:last-child) {
+    margin-right:10px;
+  }
+}
+
+.circle-1{
+  animation-delay:0.15s;
+}
+
+.circle-2{
+  animation-delay:0.25s;
+}
+
+.circle-3{
+  animation-delay:0.35s;
+}
+
+
+@keyframes bounce_circle{
+  0%{
+    //opacity: 1;
+  }
+
+  50%{
+    //background-color:rgb(0,0,0);
+    background-color: $white;
+    opacity: 1;
+  }
+
+  100%{
+    opacity: 0;
+  }
+}
+
+.preloader-mini {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+.preloader-mini__rotating-border {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  border-left: 2px solid $accent;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  border-right: 2px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+
+  height: 46px;
+  width: 46px;
+  margin: -23px 0 0 -23px;
+
+  border-radius: 50%;
+
+  animation: load 0.8s infinite linear;
+
+  &::after {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 50%;
+  }
+}
+
+@keyframes load {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,20 @@
+.header__inner {
+  @include inner;
+  padding-top: 28px;
+  padding-left: 1.5%;
+  padding-right: 3%;
+  align-items: flex-start;
+}
+
+.header__logo {
+  margin-right: auto;
+}
+
+.header--margin {
+  margin-bottom: 40px;
+}
+
+.header__inner--end {
+  min-height: 77px;
+  justify-content: flex-end;
+}

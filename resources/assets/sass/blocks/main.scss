@@ -1,0 +1,40 @@
+.main {
+  position: relative;
+}
+
+.main--margin {
+  margin-top: 150px;
+}
+
+.main__inner {
+  position: relative;
+
+  @include inner;
+}
+
+.personal-page {
+  .main__inner {
+    padding-left: 510px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+
+@media screen and (max-width: 1920px) {
+  .personal-page {
+    .main__inner {
+      padding-left: 28%;
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .personal-page {
+    .main__inner {
+      padding-left: 420px;
+    }
+  }
+}

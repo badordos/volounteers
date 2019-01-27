@@ -1,0 +1,272 @@
+.personal-user {
+  margin-bottom: 80px;
+
+  .auth-user__location {
+    margin: 0;
+    margin-left: 100px;
+
+    @include title;
+    font-size: 1.75rem;
+
+    svg {
+      width: 35px;
+      height: 40px;
+    }
+  }
+}
+
+.personal-user__show {
+  display: block;
+  margin: 0 auto;
+  margin-top: 17px;
+  padding: 10px 26px;
+
+  font-size: 0.875rem;
+}
+
+.personal-user__social {
+  display: flex;
+  width: 430px;
+  justify-content: center;
+  margin-top: 10px;
+
+  a {
+    width: 45px;
+    height: 45px;
+  }
+
+  ul li:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.personal-user__inner {
+  display: flex;
+  align-items: flex-start;
+}
+
+.personal-user__photo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 430px;
+  height: 430px;
+  margin-right: 30px;
+  padding-bottom: 20px;
+
+  border-radius: 28px;
+
+  background-color: #d8d8d8;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.personal-user__name {
+  margin: 0;
+
+  font-size: 2rem;
+}
+
+.personal-user__inner-header {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  margin-bottom: 45px;
+}
+
+.personal-user__inner-header--editor {
+  .personal-user__name {
+    width: 50%;
+  }
+}
+
+.personal-user__inner-column:last-child {
+  flex-grow: 1;
+}
+
+.personal-user__inner-features {
+  column-count: 2;
+
+  & > li {
+    margin-bottom: 32px;
+  }
+}
+
+.personal-user__feature {
+  min-width: 330px;
+
+  page-break-inside: avoid;
+  break-inside: avoid;
+
+  h4 {
+    margin-bottom: 5px;
+
+    @include paragraph($size: 1.125rem, $weight: $medium, $color: $accent);
+  }
+
+  p,ul {
+    @include title;
+    font-size: 1.5rem;
+    color: color('personal-page', 'text');
+  }
+
+  li {
+    &::before {
+      content: '-';
+      padding-right: 5px;
+    }
+  }
+
+  ul {
+    &::-webkit-scrollbar {
+      width: 12px;
+
+      background-color: color('header', 'avatar');
+
+      border-radius: 9px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $accent;
+
+      border-radius: 9px;
+    }
+  }
+}
+
+.personal-user__inner-features--editor {
+  display: flex;
+
+  .personal-user__feature {
+    min-width: 350px;
+    margin-bottom: 32px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.personal-user__edit {
+  width: 19vw;
+  max-width: 400px;
+  min-width: 300px;
+  padding: 14px 30px;
+  padding-right: 35px;
+
+  @include title;
+  font-weight: $medium;
+  color: $accent;
+  font-size: 1.875rem;
+
+  border: 3px solid $accent;
+  border-radius: 47px;
+  outline: none;
+
+  @include placeholder {
+    @include paragraph($weight: $medium, $size: 1.875rem, $color: rgba(81, 81, 81, .36));
+  }
+
+  background: url('/images/icon-pencil.svg') no-repeat 98% 50%;
+  background-size: 30px 30px;
+}
+
+.auth-user__location--editor {
+  .select {
+    input[type=search] {
+      padding: 14px 30px !important;
+
+      @include placeholder {
+        @include title;
+        font-weight: $medium !important;
+        font-size: 1.75rem !important;
+        color: $accent !important;
+      }
+    }
+
+    .dropdown-toggle {
+      border: 3px solid $accent !important;
+      border-radius: 47px !important;
+    }
+
+    .selected-tag {
+      @include title;
+      font-weight: $medium !important;
+      font-size: 1.75rem !important;
+      color: $accent !important;
+    }
+  }
+}
+
+.personal-user__submit {
+  display: block;
+  margin: 0 auto;
+}
+
+.personal-user__photo--editor {
+  margin-left: 15px;
+}
+
+@media screen and (max-width: 1600px) {
+  .personal-user {
+    margin-bottom: 60px;
+  }
+
+  .personal-user__feature {
+    min-width: 280px;
+  }
+
+  .personal-user__photo {
+    width: 246px;
+    height: 246px;
+  }
+
+  .personal-user__social {
+    width: 246px;
+
+    a {
+      width: 35px;
+      height: 35px;
+    }
+
+    ul li:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+
+  .personal-user__inner-features--editor {
+    .personal-user__feature {
+      min-width: 120px;
+    }
+  }
+
+  .personal-user__edit {
+    min-width: 300px !important;
+  }
+
+  .personal-user {
+    .auth-user__location--editor {
+      margin-left: 40px;
+    }
+  }
+
+  .auth-user__location--editor {
+    .select {
+      input[type=search] {
+        min-width: 150px;
+      }
+    }
+  }
+
+  .personal-user__photo--editor {
+    margin-right: 10px;
+    margin-left: 30px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .personal-user__photo {
+    width: 246px;
+    height: 246px;
+  }
+}

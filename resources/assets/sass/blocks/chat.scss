@@ -1,0 +1,104 @@
+.chat {
+  margin-bottom: 64px;
+
+  h1 {
+    margin-bottom: 50px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.chat__flow {
+  .chat__comment:not(:last-of-type) {
+    margin-bottom: 58px;
+  }
+
+}
+
+.chat__comment {
+  display: flex;
+}
+
+.chat__user {
+  margin-top: 73px;
+
+  .chat__comment-right {
+    flex-grow: 1;
+  }
+
+  textarea {
+    width: 100%;
+    height: 132px;
+    padding: 15px;
+
+    resize: none;
+
+    @include paragraph($size: 1rem);
+
+    outline: none;
+    border-radius: 15px;
+    border-color: color('buttons', 'checkbox');
+
+    &:focus {
+      border-color: $accent;
+    }
+  }
+}
+
+.chat__comment-left {
+  margin-right: 53px;
+
+  .auth-user {
+    position: static;
+
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .auth-user__avatar {
+    margin-left: 0;
+  }
+}
+
+.chat__comment-right {
+  position: relative;
+
+  @include paragraph($size: 1.125rem, $color: $main, $weight: $medium);
+
+  p {
+    @include paragraph($size: 1.125rem, $color: $main, $weight: $medium);
+  }
+}
+
+.chat__comment-status {
+  z-index: 2;
+
+  position: absolute;
+  top: 0;
+  left: -10px;
+
+  display: block;
+  width: 30px;
+  height: 30px;
+
+  transform: translateX(-100%);
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.chat__more {
+  display: block;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.chat__add {
+  display: block;
+  margin-top: 22px;
+  margin-left: auto;
+}

@@ -1,0 +1,60 @@
+.news-slider {
+  width: 100%;
+
+  .swiper-scrollbar {
+    overflow: hidden;
+
+    bottom: 0;
+
+    width: 80%;
+    margin-left: 10%;
+    height: 21px;
+    background-color: color('scrollbar', 'main');
+  }
+
+  .swiper-scrollbar-drag {
+    background-color: $accent;
+
+    &:focus,
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .swiper-slide {
+    width: auto;
+  }
+
+  .swiper-container {
+    padding-bottom: 89px;
+    padding-right: 50px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .news-slider .swiper-scrollbar {
+    width: 85vw;
+    margin-left: 5vw;
+  }
+
+  .news-slider {
+    width: 100%;
+    overflow: hidden;
+    //max-width: 1820px;
+
+    .swiper-container {
+      padding-right: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .news-slider .swiper-scrollbar {
+    left: 50%;
+
+    width: 80%;
+    margin-left: 0;
+
+    transform: translateX(-50%);
+  }
+}

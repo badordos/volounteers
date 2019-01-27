@@ -1,0 +1,152 @@
+.section-about {
+  margin-bottom: 120px;
+
+  h1 {
+    margin-bottom: 40px;
+  }
+}
+
+.section-about__item {
+  padding-left: 10%;
+
+  @include word-break;
+
+  h3 {
+    @include title;
+  }
+
+  @include paragraph($size: 1.25rem, $weight: $medium, $color: $main);
+
+  h2,
+  h3,
+  blockquote,
+  ol,
+  ul {
+    width: 60%;
+  }
+
+  p,
+  blockquote,
+  ol,
+  ul {
+    text-align: justify;
+  }
+
+  p {
+    width: 60%;
+    margin-bottom: 25px;
+
+    @include paragraph($size: 1.25rem, $weight: $medium, $color: $main);
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 120px;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+
+    border-radius: 10px;
+  }
+
+  .medium-insert-buttons {
+    display: none;
+  }
+
+  .medium-insert-embed {
+    z-index: 1;
+    position: relative;
+
+    margin-bottom: 20px !important;
+  }
+
+  .medium-insert-embeds {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .medium-insert-images {
+    max-width: 960px;
+    margin: 0 auto;
+
+    img {
+      z-index: 2;
+
+      position: relative;
+
+      margin-bottom: 20px;
+    }
+  }
+
+  figcaption {
+    pointer-events: none !important;
+  }
+
+  ul, ol {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+
+    li {
+      display: list-item;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #2F2FF1;
+
+    &:hover,
+    &:active {
+      text-decoration: none;
+    }
+  }
+
+  blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+  }
+  blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+  blockquote p {
+    display: inline;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .section-about__item p {
+    width: 70%;
+  }
+
+  .section-about__item {
+    img {
+      margin-top: 120px;
+      margin-bottom: 120px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1300px) {
+  .section-about__item p {
+    width: 100%;
+  }
+
+  .section-about__item {
+    h3, p {
+      //padding-left: 50px;
+      //padding-right: 50px;
+    }
+  }
+}

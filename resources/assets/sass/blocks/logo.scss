@@ -1,0 +1,21 @@
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    display: block;
+    width: 26vw;
+    max-width: 486px;
+    min-width: 344px;
+
+    height: 5vw;
+    max-height: 93px;
+    min-height: 58px;
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}

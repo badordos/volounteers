@@ -1,0 +1,107 @@
+.create {
+  margin-bottom: 91px;
+
+  h1 {
+    width: 100%;
+    margin-bottom: 86px;
+  }
+}
+
+.create__inner {
+  @include inner;
+  justify-content: center;
+  padding-left: 8%;
+}
+
+.create__list {
+  @include paragraph($size: 1.75rem, $weight: $medium, $color: $main);
+
+  li {
+    display: list-item;
+    width: auto;
+    margin-left: 50px;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    &:last-of-type {
+      position: relative;
+
+      &::after {
+        z-index: -2;
+
+        content: '';
+        position: absolute;
+        left: 15px;
+        bottom: -15px;
+
+        display: block;
+
+        border-radius: 50%;
+        border: 80px solid transparent;
+        border-left: 80px solid $accent;
+
+        transform: translateY(50%) rotate(-35deg);
+      }
+
+      &::before {
+        z-index: -1;
+
+        content: '';
+
+        position: absolute;
+        left: 19px;
+        bottom: -12px;
+
+        display: block;
+
+        border-radius: 50%;
+        border: 80px solid $white;
+        border-left: 80px solid $white;
+
+        transform: translateY(50%) rotate(-35deg);
+      }
+    }
+  }
+
+  h2 {
+    margin-bottom: 30px;
+
+    font-size: 2.25rem;
+  }
+
+  .btn {
+    margin-top: 35px;
+    margin-left: 150px;
+    padding: 18px 23px;
+
+    font-weight: $medium;
+    font-size: 1.25rem;
+
+    border-radius: 25px;
+  }
+}
+
+.create__image {
+  padding-top: 20px;
+  margin-right: 7%;
+  img {
+    width: 378px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .create__image {
+    padding-top: 60px;
+    margin-right: 4%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .create__image {
+    padding-top: 0;
+    margin-right: 4%;
+  }
+}

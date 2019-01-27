@@ -1,0 +1,64 @@
+.test {
+  position: absolute;
+  top: 105px;
+  left: $main-padding-left;
+
+  width: 31%;
+
+  h1 {
+    margin-bottom: 17px;
+
+    font-size: 2.25rem; //36px
+  }
+
+  p {
+    width: 60%;
+
+    font-size: 1.25rem; //20px
+  }
+
+  .btn {
+    margin-top: 40px;
+  }
+}
+
+.test__start {
+  position: absolute;
+}
+
+.test__view-question {
+  position: absolute;
+
+  display: flex;
+  width: 98%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  .btn {
+    margin-top: 0;
+    margin-bottom: 22px;
+  }
+  
+  h1 {
+    width: 100%;
+    margin-bottom: 54px;
+  }
+}
+
+.test__view {
+  .error-block {
+    position: absolute;
+    left: 0;
+    top: 50px;
+
+    width: 100%;
+    margin-right: 0;
+    justify-content: center;
+  }
+}
+
+.test__view-release {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}

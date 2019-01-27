@@ -1,0 +1,27 @@
+.work__inner {
+  @include inner;
+  flex-wrap: wrap;
+
+  padding-left: $main-padding-left;
+}
+
+.work {
+  position: relative;
+
+  margin-bottom: 96px;
+
+  h1 {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+.work__image {
+  width: 100%;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}

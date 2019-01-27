@@ -1,0 +1,95 @@
+.achievement-card {
+  width: 31%;
+  margin-bottom: 40px;
+
+  &:not(:nth-child(3n)) {
+    margin-right: calc((100% - 31% * 3) / 2);
+  }
+}
+
+.achievement-card__inner-header {
+  display: flex;
+  margin-bottom: 35px;
+
+  h3 {
+    margin-bottom: 8px;
+
+    @include title;
+  }
+
+  p {
+    width: 212px;
+
+    @include paragraph($weight: $medium, $size: 1.125rem, $color: color('achievement', 'note'));
+  }
+}
+
+.achievement-card__medal {
+  width: 49px;
+  height: 88px;
+  margin-right: 26px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+
+.achievement-card__content {
+  text-align: justify;
+
+  p {
+    @include paragraph($weight: $medium, $size: 1.125rem, $color: color('personal-page', 'text'), $height: 1.8);
+  }
+}
+
+.achievement-card--big {
+  width: 32%;
+  //margin-bottom: 107px;
+
+  .achievement-card__medal {
+    width: 96px;
+    height: 171px;
+  }
+
+  .achievement-card__inner-header {
+    flex-wrap: nowrap;
+
+    h3 {
+      margin-bottom: 20px;
+
+      font-size: 1.875rem;
+    }
+  }
+
+  p {
+    width: auto;
+  }
+
+  &:not(:nth-child(3n)) {
+    margin-right: calc((100% - 32% * 3) / 2);
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .achievement-card {
+    width: 340px;
+    margin-right: calc((100% - 330px * 2)/5);
+    margin-left: calc((100% - 330px * 2)/5);
+
+    &:not(:nth-child(3n)) {
+      margin-right: calc((100% - 330px * 2)/5);
+    }
+  }
+
+  .achievement-card--big {
+    width: 400px;
+
+    margin-right: calc((100% - 400px * 2)/5);
+    margin-left: calc((100% - 400px * 2)/5);
+
+    &:not(:nth-child(3n)) {
+      margin-right: calc((100% - 400px * 2)/5);
+    }
+  }
+}

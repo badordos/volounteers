@@ -1,0 +1,25 @@
+.file-upload {
+  position: relative;
+  overflow: hidden;
+
+  padding: 10px;
+
+  text-align: center;
+
+  input[type="file"] {
+    display: none;
+  }
+
+  label {
+    display: inline-block;
+
+    width: auto;
+    height: auto;
+
+    cursor: pointer;
+  }
+
+  .btn {
+    background-color: transparent;
+  }
+}

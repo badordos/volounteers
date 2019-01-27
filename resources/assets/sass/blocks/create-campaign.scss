@@ -1,0 +1,380 @@
+.create-campaign {
+  overflow: hidden;
+
+  position: relative;
+
+  width: 100%;
+  margin-bottom: 53px;
+
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  box-shadow: 0 18px 18px 0 rgba(102, 36, 132, 0.15);
+}
+
+.create-campaign__inner {
+  @include inner;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding-bottom: 100px;
+}
+
+.create-campaign__content {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-left: 50px;
+  margin-right: 10px;
+}
+
+.create-campaign__content--position {
+  position: relative;
+
+  .btn--step {
+    position: absolute;
+    bottom: 40px;
+    right: 80px;
+  }
+}
+
+.create-campaign__content--nowrap {
+  flex-wrap: nowrap;
+
+  .first-column {
+    width: 50%;
+  }
+}
+
+.create-campaign__content--editor {
+   .btn--step {
+     margin-left: auto;
+   }
+ }
+
+.create-campaign__content--column {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.create-campaign__content--center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-campaign__step {
+  display: flex;
+  margin-bottom: 20px;
+
+  @include title;
+  font-size: 3rem;
+}
+
+.create-campaign__step-current {
+  margin-left: 10px;
+}
+
+.create-campaign__step-next {
+  position: relative;
+
+  margin-left: 138px;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    left: -11px;
+
+    display: block;
+    width: 119px;
+    height: 4px;
+
+    background-color: $accent;
+
+    transform: translate(-100%, -50%);
+  }
+}
+
+
+.create-campaign__inner-photo {
+  min-width: 462px;
+  padding-top: 200px;
+
+  img {
+    width: 395px;
+    height: 456px;
+  }
+}
+
+.create-campaign__inner-header {
+  position: relative;
+
+  h1 {
+    width: 400px;
+    margin-top: 0;
+  }
+
+  .btn--arrow-left {
+    position: absolute;
+    top: 6px;
+    left: -50px;
+
+    padding-top: 10px;
+    padding-right: 33px;
+    padding-bottom: 10px;
+
+    transform: translateX(-100%);
+  }
+}
+
+.create-campaign__inner-column {
+  display: flex;
+  flex-direction: column;
+
+  .btn--step {
+    margin-top: auto;
+  }
+}
+
+.create-campaign__form {
+  h3 {
+    margin: 0;
+    margin-bottom: 21px;
+
+    @include title;
+    font-size: 1.375rem;
+  }
+
+  .label {
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: 28px;
+    }
+  }
+
+  input[type=text],
+  input[type=number],
+  textarea {
+    display: block;
+    min-width: 395px;
+    padding: 22px 26px;
+
+    @include paragraph($size: 1.25rem, $weight:  $medium, $color: $main);
+
+    border-radius: 37px;
+    border: 2px solid $accent;
+    outline: none;
+
+    @include placeholder {
+      @include paragraph($size: 1.25rem, $weight:  $medium, $color: rgba($main, .7));
+    }
+
+    &.complete {
+      border: 2px solid #F8B133;
+    }
+  }
+
+  textarea {
+    height: 493px;
+    padding-right: 61px;
+
+    resize: none;
+  }
+
+  form {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  input {
+    &.error {
+      border-color: color('state', 'warning');
+    }
+
+    &.animate-error {
+      animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+  }
+
+  .row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    .checkbox-container {
+      margin-left: 20px;
+    }
+  }
+
+  .label--human {
+    input {
+      padding-left: 65px;
+
+      background: url('#{$path-img}icon-human--accent.svg') no-repeat 25px 50%;
+      background-size: 19px 33px;
+    }
+  }
+
+  .label--coin {
+    input {
+      padding-left: 72px;
+
+      background: url('#{$path-img}icon-coin--accent.svg') no-repeat 22px 50%;
+      background-size: 30px 30px;
+    }
+  }
+}
+
+.create-campaign__form-column {
+  display: flex;
+  flex-direction: column;
+
+  &:not(:last-of-type) {
+    margin-right: 83px;
+  }
+}
+
+.create-campaign__form-column--wide {
+  input[type=text],
+  textarea {
+    min-width: 482px;
+  }
+}
+
+.create-campaign__description {
+  max-width: 720px;
+
+  @include title;
+  font-size: 1.375rem;
+}
+
+.create-campaign__company-photos {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 27px;
+  margin-left: -13px;
+  margin-right: -13px;
+  margin-bottom: 65px;
+
+  li {
+    position: relative;
+
+    display: block;
+    width: 93px;
+    height: 97px;
+    margin-left: 13px;
+    margin-right: 13px;
+    margin-bottom: 18px;
+
+    background-color: color('header', 'avatar');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+
+    .btn--close {
+      top: 5px;
+      right: 5px;
+
+      //display: none;
+      width: 30px;
+      height: 30px;
+
+      transform: scale(0);
+      opacity: 0;
+
+      transition: transform ease .3s;
+      &::before,
+      &::after {
+        width: 17px;
+        height: 3px;
+      }
+    }
+
+    &:hover .btn--close {
+      //display: block;
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+.create-campaign__buttons {
+  margin: 0 auto;
+
+  display: flex;
+}
+
+.create-campaign__buttons-button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 1920px) {
+  .create-campaign__content--nowrap {
+    .first-column {
+      width: 30%;
+      min-width: 400px;
+    }
+
+    .second-column {
+      width: 70%;
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .create-campaign__inner-photo {
+    display: flex;
+    justify-content: flex-end;
+    min-width: auto;
+
+    img {
+      width: 25vw;
+      max-width: 395px;
+      min-width: 295px;
+      height: 29vw;
+      max-height: 456px;
+      min-height: 340px;
+    }
+  }
+
+  .create-campaign__content {
+    margin-left: 30px;
+  }
+
+  .create-campaign__form-column {
+    align-items: flex-start;
+
+    &:not(:last-of-type) {
+      margin-right: 47px;
+    }
+  }
+
+  .create-campaign__form {
+    input[type=number] {
+      width: 25vw;
+      min-width: 318px;
+      max-width: 395px;
+    }
+
+    .select {
+      width: 25vw;
+      min-width: 318px;
+      max-width: 395px;
+    }
+
+    .label--human input {
+      background-size: 21px 33px;
+    }
+
+    .label--coin input {
+      background-size: 28px 32px;
+    }
+  }
+}

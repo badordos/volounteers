@@ -1,0 +1,75 @@
+.date-picker {
+  input[type=text] {
+    width: 150px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @include title;
+    font-size: 1.5rem;
+    color: color('personal-page', 'text');
+    outline: none;
+    box-shadow: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      border-color: $accent;
+    }
+
+    @include placeholder {
+      @include title;
+      font-size: 1.25rem;
+
+      opacity: .5;
+    }
+  }
+}
+
+.pika-single {
+  border: 1px solid $accent !important;
+  border-radius: 5px;
+}
+
+.pika-title {
+  @include title;
+}
+
+.pika-table {
+  th {
+    @include title;
+    color: $accent !important;
+  }
+}
+
+.pika-day {
+  font-family: $font-family-base !important;
+  font-size: 0.75rem !important;
+  color: color('personal-page', 'text') !important;
+
+  &:hover {
+    background-color: $accent !important;
+    color: #ffffff !important;
+  }
+}
+
+.is-today {
+  .pika-day {
+    color: $accent !important;
+
+    &:hover {
+      background-color: $accent !important;
+      color: #ffffff !important;
+    }
+  }
+}
+
+.is-selected {
+  .pika-day {
+    background-color: $accent !important;
+    color: #ffffff !important;
+
+    box-shadow: inset 0 1px 3px #fff !important;
+  }
+}

@@ -1,0 +1,123 @@
+.upload-block__inner {
+  display: flex;
+  width: 100%;
+}
+
+.upload-block__main {
+  position: relative;
+
+  display: flex;
+  width: 920px;
+  height: 694px;
+  margin-bottom: 33px;
+  justify-content: center;
+  align-items: center;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  border: 2px dashed $accent;
+  border-radius: 29px;
+
+  .btn {
+    background-color: rgba($white, .5);
+
+    &:hover,
+    &:focus {
+      background-color: rgba($white, 1);
+    }
+  }
+
+  .preloader-mini {
+    top: 40%;
+
+    transform: translate(-50%, -50%);
+  }
+}
+
+.upload-block__main--video {
+  background-size: contain;
+}
+
+.upload-block__main-buttons {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 60px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.upload-block__buttons {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: -10px;
+  margin-right: -10px;
+  
+  .file-upload.disabled {
+    opacity: .2;
+    
+    label {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    &:hover,
+    &:focus {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.upload-block__buttons-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 155px;
+  height: 161px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  border: 2px dashed $accent;
+  border-radius: 5px;
+}
+
+.upload-block__video-upload {
+  @include title;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-block__video-upload--text {
+  font-weight: normal;
+  
+  text-shadow: 0 0.5px 0.5px #fff,
+               0px 0.5px 0.5px #fff,
+               0.5px 0 0.5px #fff,
+               0.5px 0 0.5px #fff;
+
+  cursor: default;
+}
+
+@media screen and (max-width: 1920px) {
+  .upload-block__main {
+    height: 37vw;
+    max-height: 694px;
+    min-height: 517px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .upload-block__main {
+    min-height: 420px;
+  }
+
+  .file-upload {
+    padding: 5px;
+  }
+}

@@ -1,0 +1,34 @@
+.thank-you {
+  margin-top: 250px;
+  margin-bottom: 190px;
+}
+
+.thank-you__inner {
+  @include inner;
+  justify-content: center;
+}
+
+.thank-you__inner-photo {
+  margin-top: 40px;
+  margin-right: 98px;
+
+  img {
+    width: 331px;
+    height: 400px;
+  }
+}
+
+.thank-you__content {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  align-items: center;
+
+  h1 {
+    width: 100%;
+    margin-bottom: 70px;
+
+    @include title;
+    font-size: 3rem;
+  }
+}

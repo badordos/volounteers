@@ -1,0 +1,29 @@
+.lg-backdrop.in {
+  opacity: .9 !important;
+}
+
+.lg-object.lg-image {
+  border-radius: 15px !important;
+}
+
+.lg-next,
+.lg-prev {
+  width: 50px;
+  height: 50px;
+
+  &::before,
+  &::after {
+    display: none;
+  }
+
+  background: url('/images/icon-arrow.svg') no-repeat center;
+  background-size: 30px 30px;
+}
+
+.lg-prev {
+  transform: rotate(180deg);
+}
+
+.lg-toolbar .lg-icon {
+  font-size: 40px !important;
+}

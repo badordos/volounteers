@@ -1,0 +1,73 @@
+.settings-social {
+  width: 100%;
+  margin-bottom: 20px;
+
+  h1 {
+    width: 100%;
+
+    padding-left: 25px;
+  }
+
+  h2 {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    margin-bottom: 14px;
+
+    font-size: 2rem;
+
+    svg {
+      width: 40px;
+      height: 40px;
+      margin-right: 14px;
+
+      fill: $accent;
+    }
+  }
+
+  input[type=text] {
+    min-width: 400px;
+    margin-bottom: 19px;
+    padding: 20px 30px;
+
+    @include paragraph($weight: $medium, $size: 1.25rem, $color: $accent);
+
+    border: 3px solid $accent;
+    border-radius: 47px;
+    outline: none;
+
+    @include placeholder {
+      @include paragraph($weight: $medium, $size: 1.25rem, $color: rgba(81, 81, 81, .36));
+    }
+  }
+}
+
+.settings-social__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 59px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.settings-social__inner {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -25px;
+  margin-right: -25px;
+}
+
+@media screen and (max-width: 1920px){
+  .settings-social__inner {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .settings-social {
+    input[type=text] {
+      min-width: 376px;
+    }
+  }
+}

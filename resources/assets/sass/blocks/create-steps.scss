@@ -1,0 +1,259 @@
+.create-steps {
+  input[type=text],
+  textarea {
+    display: block;
+    min-width: 450px;
+    padding: 22px 26px;
+
+    @include paragraph($size: 1.25rem, $weight:  $medium, $color: $main);
+
+    border-radius: 37px;
+    border: 3px solid $accent;
+    outline: none;
+
+    @include placeholder {
+      @include paragraph($size: 1.25rem, $weight:  $medium, $color: rgba($main, .7));
+    }
+
+    &.error {
+      border-color: color('state', 'warning');
+    }
+
+    &.animate-error {
+      animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+
+    &.complete {
+      border: 3px solid #F8B133;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    height: 134px;
+    padding-right: 61px;
+
+    border-width: 2px;
+
+    resize: none;
+  }
+
+  .accordion__inner {
+    width: 55vw;
+    max-width: 1041px;
+  }
+
+  .accordion__item {
+    &:not(:last-of-type) {
+      padding-bottom: 40px;
+    }
+  }
+
+  .accordion__item--finish {
+    margin-top: 70px;
+  }
+}
+
+.create-step__inner-form {
+  display: flex;
+}
+
+.create-steps__data {
+  display: flex;
+  margin-bottom: 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.create-steps__field {
+  width: 100%;
+  min-width: 667px;
+  margin-bottom: 30px;
+
+  h3 {
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+    @include title;
+    font-size: 1.25rem;
+  }
+}
+
+.create-steps__error-limit {
+  display: block;
+  padding-left: 30px;
+
+  @include title;
+  font-size: 1rem;
+
+  color: #F8B133;
+}
+
+.create-steps__buttons {
+  display: flex;
+}
+
+.create-steps__buttons-btn {
+  display: flex;
+  align-items: center;
+
+  padding: 10px 40px;
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  .plus {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+
+    font-size: 25px;
+
+    border-width: 3px;
+  }
+
+  &.error {
+    border-color: color('state', 'warning');
+  }
+
+  &.animate-error {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+}
+
+.create-steps__buttons-btn--add {
+  padding: 8px 15px;
+  padding-right: 20px;
+
+  font-size: 1.125rem;
+}
+
+.create-steps__wrapper {
+  width: 100%;
+}
+
+.create-steps__description {
+  padding: 17px 97px 30px 27px;
+
+  @include paragraph($size: 1.25rem, $weight: $medium, $color: $main);
+  @include word-break;
+
+  border: 2px solid $accent;
+  border-radius: 37px;
+}
+
+.create-steps__vote {
+  width: auto;
+  margin-top: 40px;
+
+  justify-content: center;
+
+  h1::after {
+    display: none;
+  }
+
+  h1 {
+    display: flex;
+    align-items: center;
+
+    .popup__close {
+      position: relative;
+      top: auto;
+      right: auto;
+
+      margin-left: 20px;
+    }
+  }
+
+  input[type=text],
+  textarea {
+    width: 100%;
+    min-width: auto;
+
+    &.create-steps__vote-variant {
+      width: auto;
+      min-width: 300px;
+      padding: 10px 26px;
+      padding-right: 35px;
+    }
+  }
+
+  .section-vote__btn {
+    min-width: 250px;
+    max-width: 300px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+
+  &:last-child {
+    margin-bottom: 20px;
+  }
+
+  .create-steps__field {
+    min-width: auto;
+  }
+
+  h3 {
+    @include word-break;
+  }
+
+  p {
+    @include word-break;
+  }
+}
+
+.create-steps__vote--half {
+  width: 80%;
+}
+
+.create-steps__vote-variants {
+  position: relative;
+
+  .btn--close {
+    top: 50%;
+
+    width: 26px;
+    height: 25px;
+    margin-top: -5px;
+
+    transform: translateY(-50%);
+
+    &::before,
+    &::after {
+      width: 16px;
+      height: 3px;
+    }
+  }
+}
+
+.create-steps__vote-variant {
+  margin-bottom: 10px;
+
+  text-align: center;
+}
+
+.section-vote__variants {
+  .create-steps__error-limit {
+    margin-top: -20px;
+    margin-bottom: 5px;
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .create-steps__vote {
+    input[type=text],
+    textarea {
+      min-width: 320px;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.prev-v-img,
+.next-v-img {
+  width: 73px !important;
+  height: 73px !important;
+
+  background-color: transparent !important;
+
+  svg {
+    display: none;
+  }
+}
+
+.prev-v-img {
+  background: url('/images/icon-arrow.svg') no-repeat center;
+  background-size: contain;
+
+  transform: rotate(180deg);
+}
+.next-v-img {
+  background: url('/images/icon-arrow.svg') no-repeat center;
+  background-size: contain;
+}
+
+.content-v-img img {
+  border-radius: 15px;
+}

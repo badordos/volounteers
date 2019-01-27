@@ -1,0 +1,15 @@
+.team__inner {
+  @include inner;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-left: $main-padding-left;
+}
+
+.team {
+  margin-bottom: 100px;
+
+  h1 {
+    width: 100%;
+    margin-bottom: 106px;
+  }
+}

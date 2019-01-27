@@ -1,0 +1,42 @@
+.section-comments__inner {
+  padding-left: 6%;
+  padding-right: 15%;
+}
+
+.section-comments {
+  margin-bottom: 120px;
+
+  h1 {
+    margin-bottom: 60px;
+  }
+
+  .chat__comment-left {
+    margin-right: 100px;
+  }
+
+  .auth-user__avatar-nickname {
+    font-size: 1.5rem;
+  }
+
+  .achievements-list {
+    bottom: 22px;
+  }
+
+  .chat__comment-right {
+    font-size: 1.25rem;
+
+    p {
+      margin-bottom: 20px;
+
+      font-size: inherit;
+    }
+  }
+
+  .chat__user textarea {
+    height: 181px;
+  }
+
+  .chat__user {
+    margin-top: 117px;
+  }
+}

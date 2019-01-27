@@ -1,0 +1,70 @@
+.input-feature__list {
+  overflow-y: auto;
+
+  position: relative;
+  top: -1px;
+
+  max-height: 170px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  border: 1px solid transparent;
+  border-radius: 5px;
+
+  &.active {
+    border-color: $accent;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $accent;
+  }
+
+  li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+
+    &.active {
+      background-color: rgba($accent, .5);
+    }
+
+    &::before {
+      padding-top: 5px;
+      padding-left: 15px;
+    }
+  }
+}
+
+.input-feature__list-wrapper {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 3px;
+}
+
+.input-feature__remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+
+  svg {
+    width: 6px;
+    height: 6px;
+
+    fill: $accent;
+  }
+}
+
+.input-feature__input {
+  input[type=text] {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}

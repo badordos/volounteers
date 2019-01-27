@@ -1,0 +1,1 @@
+<a class="button btn--edit" href="nova/resources/blocks/{{$block->id}}/edit"><span>Edit</span></a>
